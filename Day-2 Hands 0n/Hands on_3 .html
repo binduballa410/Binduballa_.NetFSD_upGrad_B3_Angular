@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Registration Form</title>
+    </head>
+    <body>
+        <h1>Registration Form</h1>
+        <hr/>
+        <form action = "Register.php" method="POST" autocomplete="off">
+        <fieldset>
+            <legend>Student Registration Form</legend>
+        <label> Student Name : </label>
+        <input type = "text" id = "n1" name="n1" autofocus required placeholder="Enter name" />
+        <br/><br/>
+
+        <label> Email :</label>
+        <input type="email" id = "e1" name = "e1" />
+        <br/><br/>
+
+        <label>Phone number:</label>
+        <input type="text" pattern="\d{10}" id = "t1" name="t1" />
+        <br/><br/>
+
+        <lable>Age:</lable>
+        <input type="number" id ="a1" name="a1"  step = "1" = "10" max="30"/>
+        <br/><br/>
+
+
+        <lable>Date:</lable>
+        <input type="date" id ="d1" name="d1" min = "10" max="30"/>
+        <br/><br/>
+
+        <input type="submit" />
+        </fieldset>
+
+
+
+        </form>
+    </body>
+</html>
