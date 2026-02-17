@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang ="eng">
+    <head>
+        <title>Html pages</title>
+    </head>
+    <body align = "center">
+        <h1>Html Pages</h1>
+        <hr/>
+        <nav>
+        <a href = "Home1.html">Home</a> |
+        <a href = "Contact.html">Contact Details</a>
+        </nav>
+        <h1>Registration Form</h1>
+        <form action ="Register.php"  method ="POST" >
+            <fieldset>
+            <lable>Name:</lable>
+            <input type = "text" id= "n1" name = "n1" requried autofocus placeholder="Enter your name"  />
+            <br/><br/>
+            <lable>Email:</lable>
+            <input type="email" id = "e1" name = "e1"required placeholder="Enter your email" />
+            <br/><br/>
+            <lable>Password:</lable>
+            <input type = "password" id = "p1" name = "p1"required placeholder="Enter your password" />
+            <br/><br/>
+            <lable>Gender</lable>
+            <input type = "radio" id = "r1"name = "r1" required />
+            <label>Male</label>
+            <input type = "radio" id = "r1"name = "r1" required />
+            <label>Female</label>
+            <br/><br/>
+            <lable>Course Selection</lable>
+            <select required>
+                <option>HTML</option>
+                <option>CSS</option>
+                <option>JAVASCRIPT</option>
+                <option>ANGULAR</option>
+            </select>
+            <br/><br/>
+            <input type ="submit" value="Register" />
+            <input type ="Submit" value ="clear field"/>
+            </fieldset>
+
+        </form>
+    </body>
+</html>
