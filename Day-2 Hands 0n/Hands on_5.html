@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang ="eng">
+    <head>
+    <title>Course enrollment Form</title>
+    </head>
+    <body>
+    
+        <h1>Online Learning Platform</h1>
+        </hr>
+        <form action = "Enroll.php" method ="POST" autocomplete ="0ff">
+            <lable>Full Name:</lable>
+            <input type ="text" id = "n1" required />
+            <br/><br/>
+
+            <lable>Email:</lable>
+            <input type="email" id ="e1" required />
+            <br/><br/>
+
+            <lable>Select Courses:</lable>
+            <input list="courses" id="c1" required/>
+            <datalist id ="courses">
+                <option value ="Python">
+                <option value ="HTML">
+                <option value = "CSS">
+                <option value = "Javascript">
+            </datalist>
+            <br/><br/>
+
+            <lable>Skill Range:</lable>
+            <input type="range" id = "s1" min = "1" max = "10" />
+            <br/><br/>
+
+            <section>
+            <h3>Enrollment Completion</h3>
+            <progress value= "50" max="100">
+            </progress>
+            <p>50% compeleted</p>
+        </section>
+        <section>
+            <h3>Your Skill Level</h3>
+            <meter value = "0.6" min = "0" max="1">Intermediate</meter>
+            <p>Beginner --- Advanced</p>
+        </section>
+
+            <input type="submit" value="Enroll"/>
+        </form>
+
+    </body>
+</html>
