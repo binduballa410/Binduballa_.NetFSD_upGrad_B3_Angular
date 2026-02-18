@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blog Layout Picture</title>
+    </head>
+    <style>
+        body{
+            margin: 10px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color:none;
+            display: inline-block;
+           
+        }
+        header {
+            text-align:center;
+            padding: 20px;
+            background-color:lightblue;
+            text-decoration: underline;
+        
+        }
+        .card {
+                background: lightblue;
+                padding: 15px;
+                width :45%;
+                min-width:280px;
+                border: 1px solid #333;
+                border-radius: 10px;
+                flex:1;
+        }
+        .container{
+             display: flex;
+             flex-direction: row;
+             justify-content:center;
+             height:300px;
+             width:90%;
+             padding : 10px;
+             gap:10px; 
+        }
+        .btn{
+            display:inline-block;
+            margin-top: 10px;
+            padding:8px 12px;
+            background-color: #1e2a38;
+            color:white;
+            text-decoration: none;
+            border-radius:5px;
+        }
+        .btn:hover {
+            background-color: #32475b;
+        }
+    </style>
+    <body>
+        <header >
+            <h1>Blog</h1>
+        </header>
+            <div class="container">
+                <div class="card">
+                    <h2>10 Tips for a Productive Morning Routine</h2>
+                    <p>This blog shares practical tips to help you start your day with energy and foucus.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            <div class="container">
+                <div class="card">
+                    <h3>How to stay focused while studing</h3>
+                    <p>Quiet Place: Find a spot with minimal noise. If that is not possible, use noise-canceling headphone</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            
+            <div class="container">
+                <div class="card">
+                    <h3>The benefits of Minfullness and Meditation</h3>
+                    <p>Discover how meditation can reduce stress and improve mental clarity</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            <div class="container">
+                <div class="card">
+                    <h3>Top Travel Destinations for 2026</h3>
+                    <p>Explore best places to visit this year for an 
+                        unforgettable travel experience </p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+                
+            </div>
+            
+            
+
+    
+
+    </body>
+</html>

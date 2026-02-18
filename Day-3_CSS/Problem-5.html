@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang = "eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard Layout</title>
+    <style>
+        body {
+            margin:0;
+            font-family: Arial, sans-serif;
+            text-align:center;
+        }
+        .dashboard{
+            display: flex;
+        }
+        .sidebar {
+            background-color:gray;
+            width: 250px;
+            color:white;
+            padding:20px;
+            height: 100vh;
+        }
+        .sidebar h2{
+            margin-top:0;
+        }
+        
+        .sidebar a {
+            display: block;
+            color:rgb(92, 110, 90);
+            text-decoration: none;
+            margin:10px 0;
+            padding: 12px;
+            background-color: rgba(255, 255, 255,0,1);
+            border-radius: 6px;
+        }
+        .sidebar a:hover{
+            background-color: white;
+        }
+        .main {
+            flex:1;
+            padding:20px;
+            background-color:#f3f4f6
+        }
+        .cards {
+            display:flex;
+            gap:20px;
+        }
+        .card {
+            background-color:white;
+            padding:30px;
+            border-radius:8px;
+            border:1px solid #ddd;
+           flex: 1;
+        }
+        .card h3{
+            margin-top:0;
+            color:#1e3a8a;
+
+
+        }
+        .sidebar h2{
+            color: black;
+            text-decoration: underline;
+        }
+
+    </style>
+    </head>
+    <body>
+        <div class="dashboard">
+            <!---   sidebar  -->
+            <div class="sidebar">
+                <h2>College Panel</h2>
+                <a href="#">Dashboard</a>
+                <a href="#">Students</a>
+                <a href="#">Faculty</a>
+                <a href="#">Courses</a>
+                <a href="#">Exams</a>
+            </div>
+                <div class="main">
+                    <h1>Welcome to College Dashboard</h1>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Total Students</h3>
+                        <p>2,500</p>
+                   </div>
+                   <div class="card">
+                       <h3>Total Faculty </h3>
+                       <p>200</p>
+                    </div>
+                    <div class="card">
+                        <h3>Departments</h3>
+                        <p>10 Active Departments</p>
+                    </div>
+                </div>
+            </div>
+    </body>
+
+</html>
