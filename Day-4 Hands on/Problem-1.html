@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Media Quries</title>
+        <style>
+            body {
+                background-color: lightblue;
+                font-family: Arial, Helvetica, sans-serif;
+                margin:0;
+            }
+            nav{
+                background-color: blue;
+                padding: 10px;
+                display:flex;
+                justify-content: space-around;
+            }
+            nav a{
+                color: white;
+                text-decoration: none;
+                font-size: 18px;
+            }
+            h1{
+                text-align: center;
+            }
+
+            @media(max-width:1200px){
+                body{
+                    background-color:lightcoral;
+                }
+                nav{
+                    flex-direction: column;
+                    align-items: center;
+                }
+                nav a{
+                    font-size: 14px;
+                    padding: 5px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Displaying Media Quries</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a herf="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+
+    </body>
+</html>
