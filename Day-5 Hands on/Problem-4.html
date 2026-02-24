@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student Profile Manager</title>
+        <style>
+            .profile {
+                border:2px solid black;
+                padding:15px;
+                width:250px;
+                margin-top:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Student Profile Manager</h1>
+        <div id="profileContainer" class="profile"></div>
+        <br/>
+        <input type="number" id="newMarks" placeholder="Enter new marks" />
+        <button id="updateBtn">Update Marks</button>
+        <script>
+            let student = {
+                name:"Bindu",
+                rollNo: 410,
+                marks:85
+            };
+            function updateStudentProfile(studentObj) {
+                let container = document.getElementById("profileContainer");
+                container.innerHTML = "<p>Name: " + studentObj.name + "</p>" + "<p>Roll No: " + studentObj.rollNo + "</p>" +
+                "<p>Marks: " + studentObj.marks + "</p>";
+            }
+            function updateMarks(newMarks) {
+                student.marks = newMarks;
+                updateStudentProfile(student);
+            }
+            updateStudentProfile(student);
+            document.getElementById("updateBtn").addEventListener("click", function() {
+                let value = document.getElementById("newMarks").value;
+                updateMarks(value);
+            });
+        </script>
+    </body>
+</html>
