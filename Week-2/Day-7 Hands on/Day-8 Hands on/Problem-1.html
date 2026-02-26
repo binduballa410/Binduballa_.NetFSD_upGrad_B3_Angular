@@ -1,0 +1,36 @@
+
+<head></head>
+<body>
+<h3>Asynchronous Programming in  JavaScript</h3>
+	<hr/> 
+	
+	<button  onclick="fn_getData()">Get Data </button>
+	<br/><br/>
+	<ul  id="list1"  style="border:2px solid blue; padding:30px;">
+	</ul>
+	 
+	 
+	<script>	 
+	
+		var lstObj = document.getElementById("list1");
+		
+ 
+ async function fn_getData() {
+    try {
+        let url = "https://api.open-meteo.com/v1/forecast?latitude=16.9891&longitude=81.7785&current_weather=true";
+
+        let response = await fetch(url);
+        let data = await response.json();
+
+        document.getElementById("list1").innerHTML =
+            `<li>Temperature: ${data.current_weather.temperature} °C</li>
+             <li>Wind Speed: ${data.current_weather.windspeed} km/h</li>`;
+
+    } catch (error) {
+        document.getElementById("list1").innerHTML =
+            `<li style="color:red;">Error: ${error}</li>`;
+    }
+}
+	</script>	 
+</body>
+</html>

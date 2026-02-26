@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Async Task Manager</title>
+</head>
+<body>
+
+    <h2>Task Manager (Async)</h2>
+
+    <input type="text" id="taskInput" placeholder="Enter task">
+    <button onclick="addTask()">Add Task</button>
+
+    <ul id="taskList"></ul>
+
+<script>
+    let tasks = [];
+    const saveTask = (task) => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                tasks.push(task);
+                resolve(`Task "${task}" added successfully`);
+            }, 500);
+        });
+    };
+
+    const removeTask = (index) => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                tasks.splice(index, 1);
+                resolve("Task deleted successfully");
+            }, 500);
+        });
+    };
+
+    const getTasks = () => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(tasks);
+            }, 500);
+        });
+    };
+
+    const displayTasks = async () => {
+        const taskList = document.getElementById("taskList");
+        taskList.innerHTML = "";
+
+        const data = await getTasks();
+
+        data.forEach((task, index) => {
+            taskList.innerHTML += `
+                <li>
+                    ${task}
+                    <button onclick="deleteTask(${index})">Delete</button>
+                </li>
+            `;
+        });
+    };
+    const addTask = async () => {
+        const input = document.getElementById("taskInput");
+        const task = input.value.trim();
+
+        if (task === "") {
+            alert("Please enter a task");
+            return;
+        }
+
+        const message = await saveTask(task);
+        console.log(message);
+
+        input.value = "";
+        displayTasks();
+    };
+    const listTasks =async () => {
+        const data = await getTasks();
+        getTasks();
+    };
+    const deleteTask = async (index) => {
+        const message = await removeTask(index);
+        console.log(message);
+        displayTasks();
+    };
+
+</script>
+
+</body>
+</html>
