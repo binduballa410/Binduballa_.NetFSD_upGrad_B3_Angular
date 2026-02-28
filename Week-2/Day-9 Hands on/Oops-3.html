@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html></html>
+<head></head>
+<body>
+    <h2>Polymorphism and Method Overridding</h2>
+    <script>
+        class Payment {
+            pay(amount) {
+                return "Processing Payment.";
+            }
+        }
+        class CreditCardPayment extends Payment {
+             pay(amount) {
+            document.write("Paid ₹" + amount + "using Credit Card <br>");
+            }
+        }
+        class UPIPayment extends Payment {
+             pay(amount) {
+                document.write("Paid ₹" + amount + "using UPI Payment <br>");
+            }
+        }
+        class CashPayment extends Payment {
+             pay(amount) {
+                document.write("Paid ₹" + amount + "using Cash <br>");
+            }
+        }
+        let credit = new CreditCardPayment();
+        let upi = new UPIPayment();
+        let cash = new CashPayment();
+        
+        credit.pay(500);
+        upi.pay(1000);
+        cash.pay(2000);
+    </script>
+</body>
