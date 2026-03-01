@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Product Display</title>
+    </head>
+    <body>
+        <h2>Products search app</h2>
+        <input type="text" id="t1"/>
+         <h3>Product List Area</h3>
+        <div id="container"></div>
+        <script>
+           let products = ["Laptop", "Mobile", "Shoes", "Watch"];
+
+           let searchBox=document.getElementById("t1");
+           let productList = document.getElementById("container");
+
+            function displayProducts(products) {
+                productList.innerHTML = "";
+
+                if(products.length === 0){
+                    productList.innerHTML = "No Result Found";
+                    return;
+                }
+                products.forEach(function(product)
+                {
+                    let div = document.createElement("div");
+                    div.textContent = product;
+                    productList.appendChild(div);
+                });
+
+            }
+            function filterProducts() {
+                let searchText = searchBox.value.toLowerCase();
+                let filtered = products.filter(product => product.toLowerCase().includes(searchText));
+
+                displayProducts(filtered);
+            }
+            searchBox.addEventListener("input",filterProducts);
+
+            displayProducts(products);
+        </script>
+    </body>
+</html>

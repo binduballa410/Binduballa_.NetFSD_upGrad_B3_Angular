@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Dynamic To-Do List</title>
+    </head>
+    <body>
+        <h2>Dynamic To-Do List</h2>
+
+        <input type="text" id="t1" placeholder="Enter Task" />
+        <button id="addBtn">Task Added</button>
+        <div id ="box"></div>
+        <script>
+            let input = document.getElementById("t1");
+            let addBtn = document.getElementById("addBtn");
+            let taskList = document.getElementById("box");
+
+            function createTask(text) {
+                let taskDiv = document.createElement("div");
+                taskDiv.innerHTML = `<span>${text}</span> 
+                <button class="complete">Complete</button>
+                <button class="delete">Delete</button>`;
+                taskDiv.style.marginTop = "10px";
+                return taskDiv;
+            }
+
+            function addTask() {
+                let taskText = input.value.trim();
+                if(taskText === "") return;
+                let task = createTask(taskText);
+                taskList.appendChild(task);
+                input.value = "";
+            }
+            taskList.addEventListener("click",function(e){
+                if(e.target.classList.contains("delete"))
+                {
+                    e.target.parentElement.remove();
+                }
+                if(e.target.classList.contains("complete")
+                ){
+                    e.target.parentElement.style.textDecoration = "line-through";
+                }
+            });
+
+            addBtn.addEventListener("click",addTask);
+            
+        </script>
+    </body>
+</html>
