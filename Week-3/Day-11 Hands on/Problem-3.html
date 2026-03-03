@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .added {
+                display:none;
+                color:green;
+                font-size: 14px;
+            }
+            .product {
+                border:1px solid #ccc;
+                padding: 15px;
+                margin:10px;
+                width:200px;
+            }
+        </style>
+
+    </head>
+    <body>
+        
+        <h1>Product Cart</h1>
+        <h2>CartCount: <span id="cartCount">0</span></h2>
+        <div class="product">
+            <h4>Mobile</h4>
+            <button class="addBtn">Add to Cart</button>
+            <span class="added">Added</span>
+        </div>
+        <div class="product">
+            <h4>watch</h4>
+            <button class="addBtn">Add to Cart</button>
+            <span class="added">Added</span>
+        </div>
+         <div class="product">
+            <h4>Laptop</h4>
+            <button class="addBtn">Add to Cart</button>
+            <span class="added">Added</span>
+        </div>
+         <div class="product">
+            <h4>Smart Watch</h4>
+            <button class="addBtn">Add to Cart</button>
+            <span class="added">Added</span>
+        </div>
+        <script  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                let count = 0;
+                $(".addBtn").click(function(){
+                    count++;
+                    $("#cartCount").text(count);
+                    $(this).prop("disabled",true).text("Product added already");
+                    $(this).siblings(".added").show();
+                });
+            });
+        </script>
+    </body>
+</html>

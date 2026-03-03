@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>Dynamic FAQ</h1>
+        <hr/>
+        <style>
+            .answer {
+                display:none;
+                padding:10px;
+                background-color: lightpink;
+            }
+            .question {
+                background:lightcyan;
+                padding:10px;
+                margin-top:5px;
+                cursor:pointer;
+            }
+          
+        
+
+        </style>
+        
+        <div class="container">
+            <div class="qu1">
+                <h3 class="question">What is JQuery?</h3>
+                <p class="answer">jQuery is a lightweight, fast, and feature-rich JavaScript library.</p>
+            </div>
+            <div class="qu2">
+                <h3 class="question">What is the use of Show(),Hide()?</h3>
+                <p class="answer">In programming, Show() and Hide() control visibility of UI elements without deleting them.</p>
+            </div>
+            <div class="qu3">
+                <h3 class="question">What is the importance of selectors in jQuery?</h3>
+                <p class="answer">jQuery selectors allow you to select and manipulate HTML elements </p>
+            </div>
+            <div class="qu4">
+                <h3 class="question">How do we use styles in jQuery?</h3>
+                <p class="answer">The .css() method in jQuery is used to get or set style properties of the selected elements.</p>
+            </div>
+            <div class="qu5">
+                <h3 class="question">What is JavaScript?</h3>
+                <p class="answer">The “.js” extension stands for JavaScript, a widely used programming language primarily for creating interactive and dynamic content on web pages.</p>
+            </div>
+        </div>
+
+
+        <script  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                
+                $(".question").click(function(){
+                    $(".answer").hide();
+                $(this).next(".answer").slideToggle(1000);
+                $(this).toggleClass("active");
+                });
+            });
+        </script>
+
+    </body>
+</html>

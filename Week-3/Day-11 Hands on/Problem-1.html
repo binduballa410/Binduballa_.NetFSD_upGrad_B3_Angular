@@ -1,0 +1,73 @@
+<html>
+ <head> 
+    <style>
+        body {
+            font-family: Arial,sans-serif;
+            text-align: center;
+        }
+        form {
+            width:360px;
+            margin:20px auto;
+        }
+        button{
+            padding: 8px 15px;
+            cursor:pointer;
+        }
+        input, select, textarea{
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+        #div1{
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>    
+ </head>
+ <body>
+<h1>Student Feedback Form</h1>
+	<hr />	
+    <form id="feedbackForm">
+        Enter Student Name:
+        <input type="text" class="c1" id="t1" />
+	    <br><br>
+	    Enter Email:
+	    <input type="text" class="c2"  id="t2"/>
+	    <br><br>
+        Course Rating:
+	    <select id="t3">
+            <option>Excellent</option>
+            <option>Very Good</option>
+            <option>Good</option>
+            <option>Better</option>
+        </select>
+        <br><br>
+        <textarea id="comments" placeholder="Enter Comments"></textarea>
+	    <br><br>
+         <input type="button" class="btn" value="Submit Button"/>
+    </form>		 
+    <div id="div1"></div>
+	<script  src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".btn").click(function(){
+                let t1 = ($("#t1").val());
+                let t2 = ($("#t2").val());
+                let t3 = ($("#t3").val());
+    
+            if (t1 == "" || t2 == ""){
+                $("#div1").text("Name and Email cannot be empty").css("color","red");
+                return;
+            }
+            
+            $("#div1").text("Feedback Submitted Successfully").css("color","green");
+            $("#t1").val("");
+            $("#t2").val("");
+            $("#t3").val("Excellent");
+            });
+ 
+        })     
+    </script>
+</body>
+</html>
