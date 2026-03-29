@@ -1,0 +1,22 @@
+﻿@model WebApplication1.Models.Product;
+
+<h2>Edit Product</h2>
+
+<form asp-action="Edit">
+    <intpu typeof="hidden" asp-for="ProductId" />
+    <div>
+        Name: <input asp-for"ProductName" />
+        <span asp-validation-for="ProductName"></span>
+    </div>
+    <div>
+        Price: <input asp-for="Price" />
+        <span asp-validation-for="Price"></span>
+    </div>
+
+    <div>
+        Category: <input asp-for="Category" />
+        <span asp-validation-for="Category"></span>
+    </div>
+
+    <button type="submit">Update</button>
+</form>

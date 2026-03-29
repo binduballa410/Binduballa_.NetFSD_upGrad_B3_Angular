@@ -1,0 +1,32 @@
+﻿@model WebApplication1.Models.Product;
+
+<h2>Create Product</h2>
+
+<form asp-action="Create">
+    <div>
+        Id: <input asp-for="ProductId" />
+        <span asp-validatoion-for="ProductId"></span>      
+    </div>
+    <br/>
+
+    <div>
+        Name: <input asp-for="ProductName" />
+        <span asp-validation-for="ProductName"></span>
+    </div>
+    <br />
+
+    <div>
+        Price: <input asp-for="Price" />
+        <span asp-validation-for="Price"></span>
+    </div>
+    <br/>
+
+    <div>
+        Category: <input asp-for="Category" />
+        <span asp-validation-for="Category"></span>
+    </div>
+    <br/>
+
+    <button type="submit">Save</button>
+</form>
+
