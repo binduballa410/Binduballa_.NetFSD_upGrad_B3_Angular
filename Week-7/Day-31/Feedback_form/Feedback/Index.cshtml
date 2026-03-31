@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Feedback Form";
+}
+
+<h2>Feedback Form</h2>
+
+<form method="post" action="/feedback/submit">
+    <label>Name:</label>
+    <input type="text" name="name" required />
+    <br /> <br />
+    <label>Comments:</label>
+    <input type="text" name="comments" requried />
+    <br /> <br />
+    <label>Rating(1-5):</label>
+    <input type="number" name="rating" min="1" max="5" requried />
+    <br />
+    <br />
+
+    <button type="submit">Submit</button>
+
+</form>
+<br />
+@if (ViewData["Message"] != null)
+{
+    <h3>@ViewData["Message"]</h3>
+    <p>Thank you, @ViewData["Name"]</p>
+}
+
