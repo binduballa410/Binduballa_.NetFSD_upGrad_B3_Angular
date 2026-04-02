@@ -1,0 +1,50 @@
+﻿@model WebApplication3.Models.ContactInfo;
+<h2 class="text-center">Add Contact</h2>
+<div class="container pb-5">
+<form asp-action="AddContact" asp-controller="Contact" method="post">
+    <div class="form-group">
+        <label>ID:</label>
+        <input type="number" asp-for="ContactId" class="form-control" />
+        <br/>
+    </div>
+    <div class="form-group">
+        <label>First Name:</label>
+        <input type="text" asp-for="FirstName" class="form-control" />
+        <br/>
+    </div>
+    <div class="form-group">
+        <label>Last Name:</label>
+        <input type="text" asp-for="LastName" class="form-control" />
+        <br/>
+    </div>
+    <div class="form-group">
+        <label>Company:</label>
+        <input type="text" asp-for="CompanyName" class="form-control" />
+        <br/>
+    </div>
+
+    <div class="form-group">
+        <label>Email:</label>
+        <input type="email" asp-for="EmailId" class="form-control"/>
+        <br/>
+    </div>
+
+    <div class="form-group">
+        <label>Mobile:</label>
+        <input type="number" asp-for="MobileNo" class="form-control" />
+        <br/>
+    </div>
+
+    <div class="form-group">
+        <label>Designation:</label>
+        <input type="text" asp-for="Designation" class="form-control" />
+        <br/>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Save</button>
+</form>
+</div>
+
+
+
+
+
