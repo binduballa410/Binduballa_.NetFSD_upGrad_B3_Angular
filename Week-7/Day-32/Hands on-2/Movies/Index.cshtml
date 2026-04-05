@@ -1,0 +1,38 @@
+﻿@model IEnumerable<WebApplication6.Models.Movie>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between">
+            <h2>Movie Catlog</h2>
+            <a href="/Movies/Create" class="btn btn-primary">Add New Movie</a>
+        </div>
+
+        <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Release Date</th>
+                    <th>Price</th>
+                    <th>Rating</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Title</td>
+                        <td>@item.Genre</td>
+                        <td>@item.ReleaseDate.ToShortDateString()</td>
+                        <td>@item.Price</td>
+                        <td>@item.Rating</td>
+                        <td>
+                            <a href="/Movies/Edit/@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                            <a href="/MOvies/Delete/@item.Id" class="btn btn-sm btn-danger"
+                            onclick="return confirm('Are you sure?')">Delete</a>
+                        </td>
+                    </tr>               
+                }
+        </tbody>
+        </table>
+    </div>

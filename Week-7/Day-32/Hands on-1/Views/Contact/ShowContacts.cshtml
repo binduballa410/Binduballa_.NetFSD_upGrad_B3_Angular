@@ -1,0 +1,32 @@
+﻿@model List<WebApplication6.Models.ContactInfo>
+
+    <h2>Contact List</h2>
+    <a href="/contact/add" class="btn btn-primary">Add New Contact</a>
+
+    <table class="table table-bordered mt-3">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Company</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Designation</th>
+            <th>Action</th>
+        </tr>
+
+        @foreach (var c in Model)
+        {
+            <tr>
+              <td>@c.ContactId</td>
+              <td>@c.FirstName @c.LastName</td>
+              <td>@c.CompanyName</td>
+              <td>@c.EmailId</td>
+              <td>@c.MobileNo</td>
+              <td>@c.Designation</td>
+              <td>
+                  <a href="/contact/get/@c.ContactId" class="btn btn-Info">View</a>
+              </td>
+
+            </tr>
+        }
+</table>
