@@ -1,0 +1,42 @@
+﻿@model WebApplication9.Models.ContactInfo;
+
+@{
+    ViewData["Title"] = "Edit Contact";
+}
+
+<div class="container mt-4">
+    <h3>Edit Contact</h3>
+    <hr />
+    <form asp-controller="Contact"asp-action="Edit" method="post">
+        <input type="hidden" asp-for="ContactId" />
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label>First Name</label>
+                <input asp-for="FirstName" class="form-control" />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label>Last Name</label>
+                <input asp-for="LastName" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label>Company</label>
+                <select asp-for="CompanyId" class="form-control"
+                        asp-items="@(new SelectList(ViewBag.Companies, "CompanyId", "CompanyName"))">
+                </select>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label>Department</label>
+                <select asp-for="DepartmentId" class="form-control"
+                        asp-items="@(new SelectList(ViewBag.Departments, "DepartmentId", "DepartmentName"))">
+                </select>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Contact</button>
+        <a href="/contacts" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>
